@@ -5,7 +5,8 @@ module.exports = {
         sourceType: "module" 
     },
     parserOptions: {
-        project: './tsconfig.json'
+        project: './tsconfig.json',
+    
     },
     settings: {
         "import/resolver": {
@@ -34,8 +35,21 @@ module.exports = {
         'import/prefer-default-export': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
         'no-unused-vars': 'warn',
-        'dot-notation': 'warn',
-        '@typescript-eslint/dot-notation': 'off'
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+       ],
+       "import/no-extraneous-dependencies": [
+        "error", {
+           "dependencies": true,
+        }
+    ]
     },
     plugins: ["@typescript-eslint"]
 };
